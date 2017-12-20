@@ -22,9 +22,9 @@ exports.createOrder = function createOrder(req, res) {
   .then(verifyIdToken)
   .then(getCustomerId)
   .then(getCustomerItems)
-  .then(getCustomerItems)
+  .then(createCustomerOrder)
   .then(function(request) {
-    console.log(request);
+    console.log(request)
     res.status(200).json(request.body)
   })
   .catch(function(error) {
